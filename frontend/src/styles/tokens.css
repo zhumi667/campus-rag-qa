@@ -1,0 +1,45 @@
+:root {
+  /* 主色（沿用 Element Plus 主蓝） */
+  --c-primary: #409eff;
+  --c-primary-dark: #337ecc;
+  --c-primary-light: #ecf5ff;
+  --c-primary-border: #a0cfff;
+
+  /* 中性色阶 */
+  --c-text-1: #1f2329;
+  --c-text-2: #4e5969;
+  --c-text-3: #86909c;
+  --c-text-4: #c9cdd4;
+
+  --c-bg-page: #f5f7fa;
+  --c-bg-card: #ffffff;
+  --c-bg-hover: #f2f3f5;
+  --c-white: #ffffff;
+
+  --c-border: #e5e6eb;
+  --c-border-strong: #c9cdd4;
+
+  /* 语义色 */
+  --c-success: #00b42a;
+  --c-success-bg: #e8ffea;
+  --c-danger: #f53f3f;
+  --c-danger-bg: #ffece8;
+  --c-warn: #ff7d00;
+  --c-warn-bg: #fff7e8;
+  --c-warn-border: #ffcf8b;
+
+  /* 圆角与间距 */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+
+  /* 阴影（仅两级，克制） */
+  --sh-1: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --sh-2: 0 2px 8px rgba(0, 0, 0, 0.06);
+}

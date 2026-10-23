@@ -1,0 +1,34 @@
+# ──────────────────────────────────────────────────────────────
+# 核心运行时依赖（Python 3.11）
+# 安装：
+#   pip install -r requirements.txt
+# 说明：
+#   · torch：默认装 CPU 版即可；如需 GPU 加速请按官方指引安装对应 CUDA 版
+#     （本项目开发环境为 torch 2.14.1+cu126）
+#   · faiss-cpu：Windows 上直接用 pip 安装（1.8+ 起官方提供 wheel）
+#   · sentence-transformers 会拉起 transformers；嵌入模型需另行下载（见 README）
+# ──────────────────────────────────────────────────────────────
+
+# Web 服务
+fastapi==0.141.1
+uvicorn==0.54.0
+pydantic==2.13.5
+python-multipart==0.0.32
+
+# 检索与嵌入
+numpy==2.4.6
+torch==2.14.1
+sentence-transformers==6.1.0
+faiss-cpu==1.15.1
+
+# 文档解析
+pdfplumber==0.11.10
+python-docx==1.2.0
+beautifulsoup4==4.15.0
+lxml==6.1.3
+openpyxl==3.1.5
+
+# 其他
+requests==2.34.2
+httpx==0.28.1
+jieba==0.42.1
