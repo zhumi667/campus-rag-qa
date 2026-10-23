@@ -1,0 +1,4 @@
+doc_id,title,family_id,version,file_type,status,issuer,publish_date,effective_date,expire_date,source_url,char_count,notes
+example_exam,桂林电子科技大学考试管理办法（示例）,example_exam,2020,txt,active,教务处,2020-06-20,2020-06-28,,,2600,合成示例语料，仅用于演示元数据格式
+example_xjgl,桂林电子科技大学普通本科学籍管理规定（示例）,example_xjgl,2021,txt,active,教务处,2021-01-15,2021-01-22,,,2900,合成示例语料，仅用于演示元数据格式
+example_jxj,桂林电子科技大学国家奖学金与国家励志奖学金评审办法（示例）,example_jxj,2021,txt,active,学生工作处,2021-07-20,2021-07-26,,,2700,合成示例语料，仅用于演示元数据格式

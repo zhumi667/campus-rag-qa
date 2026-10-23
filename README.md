@@ -131,9 +131,22 @@ ollama pull qwen2.5:3b
 
 ### 3. 准备语料
 
-把自己的文档放进 `data/raw/`（支持 `.pdf` / `.docx` / `.txt` / `.html`），然后在 `data/meta/documents.csv` 里登记元数据（`doc_id`、标题、文档族、版本、生效日期、状态等）。
+**方式一：用仓库自带的示例语料直接跑通**（推荐第一次尝试）
 
-字段说明见 `scripts/03_register.py` 表头的校验规则。
+`data/sample/` 下有三份合成的示例文档（考试管理、学籍管理、奖学金评审），
+`data/meta/documents.csv.template` 是对应的元数据模板。复制成正式文件名即可：
+
+```bash
+cp data/meta/documents.csv.template data/meta/documents.csv
+cp data/sample/*.txt data/raw/
+```
+
+**方式二：用你自己的文档**
+
+把文档放进 `data/raw/`（支持 `.pdf` / `.docx` / `.txt` / `.html`），然后在
+`data/meta/documents.csv` 里登记元数据（`doc_id`、标题、文档族、版本、生效日期、状态等）。
+
+字段校验规则见 `scripts/03_register.py` 表头。
 
 ### 4. 构建知识库
 
@@ -184,9 +197,32 @@ python scripts/06_ask.py "考试不及格可以补考吗？"
 │   └── routers/              #   认证 / 问答(SSE) / 会话 / 管理端
 ├── frontend/src/             # Vue 3 前端（登录 / 问答 / 管理三端）
 ├── scripts/                  # 数据流水线与评估脚本
+├── tests/                    # 单元测试（无需 GPU / 模型即可运行）
 ├── eval/                     # 评测框架与实验记录 ★
-└── docs/                     # 设计与踩坑记录
+└── docs/                     # 环境配置、设计决策、踩坑记录
 ```
+
+---
+
+## 测试
+
+```bash
+pip install -r requirements-dev.txt
+python -m pytest tests -q
+```
+
+**48 个单元测试，全部不需要 GPU 与模型**（0.3 秒跑完）。覆盖的是最容易出错、也是最关键的四处逻辑：
+
+| 测试文件 | 覆盖内容 |
+|---|---|
+| `tests/test_status_filter.py` | 文档状态与生效日期过滤（含"开关关闭时必须回到旧行为"） |
+| `tests/test_refuse_guard.py` | 生成侧拒答守卫（含"正常回答引用了拒答话术时不得误判"） |
+| `tests/test_sensitive.py` | 敏感信息扫描的高/中风险分级 |
+| `tests/test_chunker.py` | 切分不产生碎片（回归"67.9% 的块小于 400 字"那个问题） |
+
+> 实现上有一处刻意的取巧：测 `Retriever` 的纯判断逻辑时用
+> `Retriever.__new__(Retriever)` 绕过 `__init__`，从而无需加载索引与嵌入模型。
+> 这让整个测试套件可以在任何机器上秒级跑完。
 
 ---
 
@@ -201,6 +237,8 @@ python scripts/06_ask.py "考试不及格可以补考吗？"
 | [`eval/exp_human_eval.md`](eval/exp_human_eval.md) | 生成质量人工盲评（60 条、四档打分） |
 | [`eval/annotation_guide.md`](eval/annotation_guide.md) | 评测集标注规范 |
 | [`eval/scoring_guide.md`](eval/scoring_guide.md) | 人工打分标准 |
+| [`docs/环境配置.md`](docs/环境配置.md) | 环境要求与 **10 个实际踩到的问题** |
+| [`docs/设计决策.md`](docs/设计决策.md) | 六个关键取舍及其理由 |
 | [`docs/失败案例集.md`](docs/失败案例集.md) | **24 个真实踩坑记录**（环境、代码、模型行为、评估设计） |
 
 ---

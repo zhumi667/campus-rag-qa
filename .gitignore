@@ -1,14 +1,23 @@
 # ──────────────────────────────────────────────────────────────
 #  数据与模型（体积大 / 含校内文档，不入库）
+#  ★ 但 data/sample 与 data/meta 要保留：示例语料与元数据模板
+#    是让别人能跑起来的最小集合，必须入库。
 # ──────────────────────────────────────────────────────────────
-data/
+/data/*
+!/data/sample/
+!/data/meta/
+
 models/
 logs/
 *.log
 
 # 检索索引与切分产物（可重新生成）
-data/index/
-data/chunks/
+/data/index/
+/data/chunks/
+/data/raw/
+/data/text/
+/data/_staging/
+/data/db/
 
 # 数据库
 *.db
