@@ -1,6 +1,12 @@
 <template>
   <div class="app">
     <header class="topbar">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="会话列表"
+        @click="sidebarOpen = !sidebarOpen"
+      >☰</button>
       <div class="brand">
         <span class="brand-mark">?</span>
         <span class="brand-title">校园领域智能问答系统</span>
@@ -20,24 +26,25 @@
 
       <!-- 用户区 -->
       <div v-if="currentUser" class="user-area">
-        <span class="role-badge" :class="currentUser.role === 'admin' ? 'role-admin' : 'role-student'">
-          {{ currentUser.role === 'admin' ? '管理员' : '学生' }}
-        </span>
         <span class="user-name">{{ currentUser.display_name || currentUser.username }}</span>
         <el-button v-if="currentUser.role === 'admin'" class="admin-link" text type="primary" @click="$router.push('/admin')">
           管理后台
         </el-button>
+        <el-button text type="primary" @click="openDocs">已收录资料</el-button>
         <el-button text @click="doLogout">退出登录</el-button>
       </div>
     </header>
 
     <div class="main">
+      <div v-if="sidebarOpen" class="sidebar-mask" @click="sidebarOpen = false"></div>
       <SessionSidebar
+        :open="sidebarOpen"
         :sessions="sessions"
         :current-session-id="currentSessionId"
         @select="selectSession"
         @create="createNewSession"
         @delete="removeSession"
+        @close="sidebarOpen = false"
       />
       <ChatPanel
         :messages="messages"
@@ -46,6 +53,30 @@
         @stop="stopGeneration"
       />
     </div>
+
+    <!-- size 用 min() 而非写死 420px：Element Plus 把 size 原样作为 CSS width
+         （见 element-plus/es/components/drawer 中 style 绑定 width: size），
+         因此窄屏（375px）下不会超出视口。 -->
+    <el-drawer v-model="docsOpen" title="已收录资料" size="min(420px, 92vw)" direction="rtl">
+      <div v-if="docsLoading" class="docs-loading">正在加载…</div>
+      <div v-else class="docs-list">
+        <!-- key 用 title + version：库里可能出现同名文档（如两年同名通知），
+             仅用 title 会触发 Vue 的重复 key 警告并导致渲染复用错乱 -->
+        <div v-for="d in docsList" :key="`${d.title}|${d.version}`" class="docs-item">
+          <div class="docs-title">{{ d.title }}</div>
+          <div class="docs-meta">
+            <template v-if="d.effective_date">{{ d.effective_date }} 起施行</template>
+            <template v-else>未标注生效日期</template>
+            <template v-if="d.version">　·　版本 {{ d.version }}</template>
+            <template v-if="d.chars">　·　{{ d.chars }} 字</template>
+          </div>
+        </div>
+        <div v-if="!docsList.length" class="docs-empty">暂无已收录资料</div>
+        <div class="docs-note">
+          以上为当前有效的资料。未收录的问题系统会明确提示“未找到依据”，不会编造答案。
+        </div>
+      </div>
+    </el-drawer>
   </div>
 </template>
 
@@ -54,7 +85,7 @@ import { ref, reactive, computed, watchEffect, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import SessionSidebar from '../components/SessionSidebar.vue'
 import ChatPanel from '../components/ChatPanel.vue'
-import { fetchHealth, listSessions, createSession, getMessages, deleteSession } from '../api/client'
+import { fetchHealth, listSessions, createSession, getMessages, deleteSession, fetchCorpusDocs } from '../api/client'
 import { fetchMe, logout } from '../api/auth'
 import { useChatStream } from '../composables/useChatStream'
 
@@ -70,6 +101,27 @@ const currentSessionId = ref(null)
 const health = ref(null)
 const healthError = ref('')
 const currentUser = ref(null)
+
+// 窄屏会话抽屉开关（桌面端不显示按钮，此值恒为 false，无副作用）
+const sidebarOpen = ref(false)
+
+// 「已收录资料」抽屉：懒加载，点开时才请求
+const docsOpen = ref(false)
+const docsLoading = ref(false)
+const docsList = ref([])
+
+async function openDocs() {
+  docsOpen.value = true
+  if (docsList.value.length) return      // 已加载过就不重复请求
+  docsLoading.value = true
+  try {
+    docsList.value = await fetchCorpusDocs()
+  } catch (e) {
+    docsList.value = []
+  } finally {
+    docsLoading.value = false
+  }
+}
 
 const modelName = computed(() => {
   const models = health.value?.ollama?.models || []
@@ -201,6 +253,7 @@ onMounted(async () => {
 <style scoped>
 .app {
   height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   background: var(--c-bg-page);
@@ -317,5 +370,115 @@ onMounted(async () => {
   display: flex;
   min-height: 0;
   gap: 0;
+}
+
+/* ── 窄屏适配 ──────────────────────────────────────── */
+/* 默认（桌面）不显示，保持原样 */
+.nav-toggle {
+  display: none;
+}
+
+.sidebar-mask {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin-right: var(--sp-2, 8px);
+    border: 1px solid var(--c-border, #dcdfe6);
+    border-radius: var(--r-sm, 4px);
+    background: var(--c-bg-card, #fff);
+    color: var(--c-text-2, #606266);
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .sidebar-mask {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  /* 顶栏在窄屏允许换行，避免溢出 */
+  .topbar {
+    flex-wrap: wrap;
+    row-gap: 4px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    /* ★ 必须放开固定高度：原 .topbar 是 height: 56px，
+       允许换行后第二行会溢出到 56px 盒子外、压住下面的聊天区。 */
+    height: auto;
+    min-height: 56px;
+  }
+
+  .brand-title {
+    font-size: 14px;
+  }
+}
+
+/* 更窄（≤560px）时隐藏顶栏的状态标签，防止挤成一团 */
+@media (max-width: 560px) {
+  .chip {
+    display: none;
+  }
+
+  .user-name {
+    display: none;
+  }
+}
+
+/* ── 已收录资料抽屉 ───────────────────────────────── */
+.docs-loading {
+  padding: var(--sp-4);
+  font-size: 13px;
+  color: var(--c-text-3);
+}
+
+.docs-item {
+  padding: var(--sp-3) 0;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.docs-item:last-of-type {
+  border-bottom: none;
+}
+
+.docs-title {
+  font-size: 13.5px;
+  color: var(--c-text-1);
+  line-height: 1.6;
+  margin-bottom: 2px;
+}
+
+.docs-meta {
+  font-size: 12px;
+  color: var(--c-text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.docs-empty {
+  padding: var(--sp-4);
+  font-size: 13px;
+  color: var(--c-text-3);
+  text-align: center;
+}
+
+.docs-note {
+  margin-top: var(--sp-4);
+  padding: var(--sp-3);
+  background: var(--c-bg-page);
+  border-radius: var(--r-md);
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--c-text-3);
 }
 </style>

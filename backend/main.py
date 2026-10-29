@@ -24,7 +24,7 @@ from fastapi.responses import JSONResponse  # noqa: E402
 import config  # noqa: E402
 from src import utils  # noqa: E402
 from backend import db  # noqa: E402
-from backend.routers import admin, chat, sessions, auth  # noqa: E402
+from backend.routers import admin, chat, sessions, auth, corpus  # noqa: E402
 
 logger = utils.get_logger("backend")
 
@@ -57,6 +57,7 @@ app.include_router(auth.router)
 app.include_router(chat.router)
 app.include_router(sessions.router)
 app.include_router(admin.router)
+app.include_router(corpus.router)
 
 
 @app.get("/api/health")

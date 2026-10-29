@@ -71,6 +71,7 @@ async function submit() {
 <style scoped>
 .login-page {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,7 +79,7 @@ async function submit() {
   padding: var(--sp-4);
 }
 .login-card {
-  width: 380px;
+  width: min(380px, 92vw);
   background: var(--c-bg-card);
   border: 1px solid var(--c-border);
   border-radius: var(--r-lg);

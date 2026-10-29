@@ -1,0 +1,1409 @@
+{
+  "llm_calls_used": 15,
+  "llm_budget": 16,
+  "n_questions": 15,
+  "results": [
+    {
+      "qid": "q016",
+      "question": "本科一般读几年？最长能拖多久毕业？",
+      "category": "fact",
+      "gold_chunk_ids": [
+        "xjgl_2025_0003"
+      ],
+      "gold_doc_ids": [
+        "xjgl_2025"
+      ],
+      "gold_answer": "标准学制为4年；普通本科学生修读年限为3-6年；学生休学、保留学籍时间计入在校修读年限",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "xjgl_2025_0003",
+          "doc_id": "xjgl_2025",
+          "score": 0.567,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "xjgl_2025_0010",
+          "doc_id": "xjgl_2025",
+          "score": 0.5631,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "xjgl_2025_0011",
+          "doc_id": "xjgl_2025",
+          "score": 0.5357,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "xjgl_2025_0009",
+          "doc_id": "xjgl_2025",
+          "score": 0.5272,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订） > 第九章 退 学"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "xjgl_2025_0007",
+          "doc_id": "xjgl_2025",
+          "score": 0.5137,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "xjgl_2025_0001",
+          "doc_id": "xjgl_2025",
+          "score": 0.5107,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "xjgl_2025_0002",
+          "doc_id": "xjgl_2025",
+          "score": 0.505,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订） > 第二章 入学与注册 > 第三条 新生入学、注册与取得学籍"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "xjgl_2025_0004",
+          "doc_id": "xjgl_2025",
+          "score": 0.5044,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订） > 第四章 课程修读与免听、免修"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "pyfa_ruanjian_2025_0002",
+          "doc_id": "pyfa_ruanjian_2025",
+          "score": 0.5011,
+          "heading_path": "2025级软件工程专业培养方案"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "pyfa_zidonghua_2025_0003",
+          "doc_id": "pyfa_zidonghua_2025",
+          "score": 0.4899,
+          "heading_path": "2025级自动化专业培养方案"
+        }
+      ],
+      "gold_rank": 1,
+      "judge": {
+        "answerable": false,
+        "stage": "llm",
+        "reason": "结论：NO",
+        "chunks_checked": 3,
+        "yes_chunk_id": ""
+      },
+      "verdict": "judge_reject"
+    },
+    {
+      "qid": "q018",
+      "question": "休学期满后怎么回学校继续读书？",
+      "category": "fact",
+      "gold_chunk_ids": [
+        "xjgl_2025_0008"
+      ],
+      "gold_doc_ids": [
+        "xjgl_2025"
+      ],
+      "gold_answer": "学生休学期满，应于学期开学后一周内向所在学院申请复学，经学院批准，教务部门备案后方可复学",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "xjgl_2025_0009",
+          "doc_id": "xjgl_2025",
+          "score": 0.5798,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订） > 第九章 退 学"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "xjgl_2025_0003",
+          "doc_id": "xjgl_2025",
+          "score": 0.5661,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "xjgl_2025_0007",
+          "doc_id": "xjgl_2025",
+          "score": 0.5636,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "xjgl_2025_0008",
+          "doc_id": "xjgl_2025",
+          "score": 0.5629,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订） > 第八章 休学与复学"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "xjgl_2025_0010",
+          "doc_id": "xjgl_2025",
+          "score": 0.5385,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "xjgl_2025_0011",
+          "doc_id": "xjgl_2025",
+          "score": 0.519,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "xjgl_2025_0002",
+          "doc_id": "xjgl_2025",
+          "score": 0.5006,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订） > 第二章 入学与注册 > 第三条 新生入学、注册与取得学籍"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "xjgl_2025_0006",
+          "doc_id": "xjgl_2025",
+          "score": 0.4974,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "zzy_2021_0003",
+          "doc_id": "zzy_2021",
+          "score": 0.4858,
+          "heading_path": "桂林电子科技大学本科生专业分流及转专业管理办法（修订） > 第四章 转专业 > 第一节 申请转专业条件"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "zzy_2021_0005",
+          "doc_id": "zzy_2021",
+          "score": 0.4844,
+          "heading_path": "桂林电子科技大学本科生专业分流及转专业管理办法（修订）"
+        }
+      ],
+      "gold_rank": 4,
+      "judge": {
+        "answerable": false,
+        "stage": "llm",
+        "reason": "结论：NO",
+        "chunks_checked": 3,
+        "yes_chunk_id": ""
+      },
+      "verdict": "judge_reject"
+    },
+    {
+      "qid": "q020",
+      "question": "考试没过补考也没过怎么办？",
+      "category": "fact",
+      "gold_chunk_ids": [
+        "xjgl_2025_0006"
+      ],
+      "gold_doc_ids": [
+        "xjgl_2025"
+      ],
+      "gold_answer": "未取得学分的课程，须通过重新选课学习获得学分；学生对已取得的考试合格成绩不满意时，可以重新选课学习；学生重新选课学习成绩按该门课程所取得成绩中的最高分数记载并以此计算学分绩",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "kshgl_2020_0005",
+          "doc_id": "kshgl_2020",
+          "score": 0.5641,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第四章 学生参加考核条件及缓考、补考细则"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "kshgl_2020_0006",
+          "doc_id": "kshgl_2020",
+          "score": 0.5206,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第五章 学生考场规则"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "kshgl_2020_0009",
+          "doc_id": "kshgl_2020",
+          "score": 0.52,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第八章 考试违规行为的认定与处理"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "xjgl_2025_0006",
+          "doc_id": "xjgl_2025",
+          "score": 0.5181,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "kshgl_2020_0008",
+          "doc_id": "kshgl_2020",
+          "score": 0.5056,
+          "heading_path": "桂林电子科技大学考试管理规定"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "kshgl_2020_0003",
+          "doc_id": "kshgl_2020",
+          "score": 0.4984,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第三章 课程考核与成绩记载"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "kshgl_2020_0004",
+          "doc_id": "kshgl_2020",
+          "score": 0.4929,
+          "heading_path": "桂林电子科技大学考试管理规定"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "kshgl_2020_0007",
+          "doc_id": "kshgl_2020",
+          "score": 0.4895,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第六章 监考人员职责"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "kshgl_2020_0002",
+          "doc_id": "kshgl_2020",
+          "score": 0.482,
+          "heading_path": "桂林电子科技大学考试管理规定"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "xjgl_2025_0005",
+          "doc_id": "xjgl_2025",
+          "score": 0.4742,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        }
+      ],
+      "gold_rank": 4,
+      "judge": {
+        "answerable": false,
+        "stage": "llm",
+        "reason": "结论：NO",
+        "chunks_checked": 3,
+        "yes_chunk_id": ""
+      },
+      "verdict": "judge_reject"
+    },
+    {
+      "qid": "q021",
+      "question": "一学期最多能选多少学分的课？",
+      "category": "fact",
+      "gold_chunk_ids": [
+        "xjgl_2025_0004"
+      ],
+      "gold_doc_ids": [
+        "xjgl_2025"
+      ],
+      "gold_answer": "学生每学期主修专业的修读学分应不高于35学分；学有余力的学生，原则上经申请可增选不高于6学分",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "pyfa_jisuanji_2025_0047",
+          "doc_id": "pyfa_jisuanji_2025",
+          "score": 0.5725,
+          "heading_path": "2025级计算机科学与技术专业培养方案"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "pyfa_jisuanji_2025_0049",
+          "doc_id": "pyfa_jisuanji_2025",
+          "score": 0.5684,
+          "heading_path": "2025级计算机科学与技术专业培养方案"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "pyfa_jisuanji_2025_0048",
+          "doc_id": "pyfa_jisuanji_2025",
+          "score": 0.5618,
+          "heading_path": "2025级计算机科学与技术专业培养方案"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "xjgl_2025_0005",
+          "doc_id": "xjgl_2025",
+          "score": 0.5544,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "pyfa_rengongzhineng_2025_0041",
+          "doc_id": "pyfa_rengongzhineng_2025",
+          "score": 0.5499,
+          "heading_path": "2025级人工智能专业培养方案"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "pyfa_zidonghua_2025_0041",
+          "doc_id": "pyfa_zidonghua_2025",
+          "score": 0.5471,
+          "heading_path": "2025级自动化专业培养方案"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "pyfa_zidonghua_2025_0042",
+          "doc_id": "pyfa_zidonghua_2025",
+          "score": 0.543,
+          "heading_path": "2025级自动化专业培养方案"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "xjgl_2025_0004",
+          "doc_id": "xjgl_2025",
+          "score": 0.5362,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订） > 第四章 课程修读与免听、免修"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "pyfa_ruanjian_2025_0047",
+          "doc_id": "pyfa_ruanjian_2025",
+          "score": 0.5359,
+          "heading_path": "2025级软件工程专业培养方案"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "pyfa_rengongzhineng_2025_0040",
+          "doc_id": "pyfa_rengongzhineng_2025",
+          "score": 0.5352,
+          "heading_path": "2025级人工智能专业培养方案"
+        }
+      ],
+      "gold_rank": 8,
+      "judge": {
+        "answerable": false,
+        "stage": "llm",
+        "reason": "结论：NO",
+        "chunks_checked": 3,
+        "yes_chunk_id": ""
+      },
+      "verdict": "judge_reject"
+    },
+    {
+      "qid": "q028",
+      "question": "补考一般安排在什么时候？",
+      "category": "procedure",
+      "gold_chunk_ids": [
+        "kshgl_2020_0005"
+      ],
+      "gold_doc_ids": [
+        "kshgl_2020"
+      ],
+      "gold_answer": "理论课程安排在下一个学期第一、二周，体育课安排在下一个学期的第一周周六，单独开设的实验课程安排在该学期放假后三天内进行",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "kshgl_2020_0005",
+          "doc_id": "kshgl_2020",
+          "score": 0.5759,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第四章 学生参加考核条件及缓考、补考细则"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "kshgl_2020_0006",
+          "doc_id": "kshgl_2020",
+          "score": 0.532,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第五章 学生考场规则"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "kshgl_2020_0008",
+          "doc_id": "kshgl_2020",
+          "score": 0.5314,
+          "heading_path": "桂林电子科技大学考试管理规定"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "xjgl_2025_0006",
+          "doc_id": "xjgl_2025",
+          "score": 0.5234,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "kshgl_2020_0004",
+          "doc_id": "kshgl_2020",
+          "score": 0.5093,
+          "heading_path": "桂林电子科技大学考试管理规定"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "kshgl_2020_0003",
+          "doc_id": "kshgl_2020",
+          "score": 0.4992,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第三章 课程考核与成绩记载"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "kshgl_2020_0007",
+          "doc_id": "kshgl_2020",
+          "score": 0.4876,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第六章 监考人员职责"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "kshgl_2020_0002",
+          "doc_id": "kshgl_2020",
+          "score": 0.4825,
+          "heading_path": "桂林电子科技大学考试管理规定"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "tzjk_2026_0001",
+          "doc_id": "tzjk_2026",
+          "score": 0.4813,
+          "heading_path": "关于开展2026年10月学生体质健康测试工作的通知"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "xjgl_2025_0003",
+          "doc_id": "xjgl_2025",
+          "score": 0.4812,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        }
+      ],
+      "gold_rank": 1,
+      "judge": {
+        "answerable": false,
+        "stage": "llm",
+        "reason": "结论：NO",
+        "chunks_checked": 3,
+        "yes_chunk_id": ""
+      },
+      "verdict": "judge_reject"
+    },
+    {
+      "qid": "q029",
+      "question": "什么情况下会被取消考试资格？",
+      "category": "procedure",
+      "gold_chunk_ids": [
+        "kshgl_2020_0004"
+      ],
+      "gold_doc_ids": [
+        "kshgl_2020"
+      ],
+      "gold_answer": "取消考试资格情形：缺交本课程作业三分之一及以上者；平时成绩为零的；非单独设课的实验成绩为零分的；上课迟到或早退累计占该门课程上课次数三分之一及以上者；旷课达10学时以上或累计超过该门课程学期总学时三分之一及以上者；经开课单位认定其他严重扰乱教学秩序的学生。被取消考试资格者，该课程成绩以零分计且不能参加该课程的补考",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "kshgl_2020_0006",
+          "doc_id": "kshgl_2020",
+          "score": 0.5806,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第五章 学生考场规则"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "kshgl_2020_0009",
+          "doc_id": "kshgl_2020",
+          "score": 0.5695,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第八章 考试违规行为的认定与处理"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "kshgl_2020_0004",
+          "doc_id": "kshgl_2020",
+          "score": 0.5552,
+          "heading_path": "桂林电子科技大学考试管理规定"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "kshgl_2020_0008",
+          "doc_id": "kshgl_2020",
+          "score": 0.5412,
+          "heading_path": "桂林电子科技大学考试管理规定"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "kshgl_2020_0005",
+          "doc_id": "kshgl_2020",
+          "score": 0.5401,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第四章 学生参加考核条件及缓考、补考细则"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "kshgl_2020_0007",
+          "doc_id": "kshgl_2020",
+          "score": 0.5352,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第六章 监考人员职责"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "kshgl_2020_0010",
+          "doc_id": "kshgl_2020",
+          "score": 0.5336,
+          "heading_path": "桂林电子科技大学考试管理规定"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "xjgl_2025_0002",
+          "doc_id": "xjgl_2025",
+          "score": 0.5272,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订） > 第二章 入学与注册 > 第三条 新生入学、注册与取得学籍"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "kshgl_2020_0003",
+          "doc_id": "kshgl_2020",
+          "score": 0.5204,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第三章 课程考核与成绩记载"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "xjgl_2025_0003",
+          "doc_id": "xjgl_2025",
+          "score": 0.5168,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        }
+      ],
+      "gold_rank": 3,
+      "judge": {
+        "answerable": null,
+        "stage": "budget_exhausted",
+        "reason": "LLM 预算不足（已用 15/16），未重新判定；该题在 eval_runs.csv 中 refused=true",
+        "chunks_checked": 0,
+        "yes_chunk_id": ""
+      },
+      "verdict": "judge_reject"
+    },
+    {
+      "qid": "q030",
+      "question": "考试迟到了还能进场吗？",
+      "category": "fact",
+      "gold_chunk_ids": [
+        "kshgl_2020_0006"
+      ],
+      "gold_doc_ids": [
+        "kshgl_2020"
+      ],
+      "gold_answer": "考生应提前到达考场，按指定位置就座；考试开始15分钟后考生不得进入考场，按旷考处理；考生在开考后30分钟内、考试结束前10分钟内不得离开考场",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "kshgl_2020_0006",
+          "doc_id": "kshgl_2020",
+          "score": 0.5792,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第五章 学生考场规则"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "kshgl_2020_0007",
+          "doc_id": "kshgl_2020",
+          "score": 0.5425,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第六章 监考人员职责"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "kshgl_2020_0004",
+          "doc_id": "kshgl_2020",
+          "score": 0.5375,
+          "heading_path": "桂林电子科技大学考试管理规定"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "kshgl_2020_0009",
+          "doc_id": "kshgl_2020",
+          "score": 0.5167,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第八章 考试违规行为的认定与处理"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "kshgl_2020_0008",
+          "doc_id": "kshgl_2020",
+          "score": 0.5119,
+          "heading_path": "桂林电子科技大学考试管理规定"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "kshgl_2020_0005",
+          "doc_id": "kshgl_2020",
+          "score": 0.4941,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第四章 学生参加考核条件及缓考、补考细则"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "kshgl_2020_0010",
+          "doc_id": "kshgl_2020",
+          "score": 0.4713,
+          "heading_path": "桂林电子科技大学考试管理规定"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "kshgl_2020_0003",
+          "doc_id": "kshgl_2020",
+          "score": 0.4637,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第三章 课程考核与成绩记载"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "kshgl_2020_0002",
+          "doc_id": "kshgl_2020",
+          "score": 0.4538,
+          "heading_path": "桂林电子科技大学考试管理规定"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "tzjk_2026_0001",
+          "doc_id": "tzjk_2026",
+          "score": 0.4528,
+          "heading_path": "关于开展2026年10月学生体质健康测试工作的通知"
+        }
+      ],
+      "gold_rank": 1,
+      "judge": {
+        "answerable": null,
+        "stage": "budget_exhausted",
+        "reason": "LLM 预算不足（已用 15/16），未重新判定；该题在 eval_runs.csv 中 refused=true",
+        "chunks_checked": 0,
+        "yes_chunk_id": ""
+      },
+      "verdict": "judge_reject"
+    },
+    {
+      "qid": "q041",
+      "question": "艺术类专业或者北海校区的学生转专业有什么限制？",
+      "category": "fact",
+      "gold_chunk_ids": [
+        "zzy_2021_0003"
+      ],
+      "gold_doc_ids": [
+        "zzy_2021"
+      ],
+      "gold_answer": "艺术类专业的学生不能申请转入非艺术类专业；中外合作项目的学生只能在本项目内转专业；北海校区的学生只能在北海校区内转专业",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "zzy_2021_0003",
+          "doc_id": "zzy_2021",
+          "score": 0.577,
+          "heading_path": "桂林电子科技大学本科生专业分流及转专业管理办法（修订） > 第四章 转专业 > 第一节 申请转专业条件"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "zzy_2021_0001",
+          "doc_id": "zzy_2021",
+          "score": 0.5743,
+          "heading_path": "桂林电子科技大学本科生专业分流及转专业管理办法（修订）"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "xjgl_2025_0007",
+          "doc_id": "xjgl_2025",
+          "score": 0.5739,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "zzy_2021_0005",
+          "doc_id": "zzy_2021",
+          "score": 0.5679,
+          "heading_path": "桂林电子科技大学本科生专业分流及转专业管理办法（修订）"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "zzy_2021_0004",
+          "doc_id": "zzy_2021",
+          "score": 0.5545,
+          "heading_path": "桂林电子科技大学本科生专业分流及转专业管理办法（修订） > 第四章 转专业 > 第二节 转专业工作程序"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "zzy_2021_0002",
+          "doc_id": "zzy_2021",
+          "score": 0.5501,
+          "heading_path": "桂林电子科技大学本科生专业分流及转专业管理办法（修订）"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "xjgl_2025_0009",
+          "doc_id": "xjgl_2025",
+          "score": 0.527,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订） > 第九章 退 学"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "xjgl_2025_0003",
+          "doc_id": "xjgl_2025",
+          "score": 0.521,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "xjgl_2025_0011",
+          "doc_id": "xjgl_2025",
+          "score": 0.5184,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "xjgl_2025_0010",
+          "doc_id": "xjgl_2025",
+          "score": 0.5143,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        }
+      ],
+      "gold_rank": 1,
+      "judge": {
+        "answerable": null,
+        "stage": "budget_exhausted",
+        "reason": "LLM 预算不足（已用 15/16），未重新判定；该题在 eval_runs.csv 中 refused=true",
+        "chunks_checked": 0,
+        "yes_chunk_id": ""
+      },
+      "verdict": "judge_reject"
+    },
+    {
+      "qid": "q045",
+      "question": "实验室安全出问题找谁负责？",
+      "category": "procedure",
+      "gold_chunk_ids": [
+        "sysaq_2021_0001"
+      ],
+      "gold_doc_ids": [
+        "sysaq_2021"
+      ],
+      "gold_answer": "学校党政主要负责人是学校安全工作第一责任人；分管学校安全工作和实验室工作的校领导是实验室安全工作的重要领导责任人；各二级单位主要负责人是本单位实验室安全工作主要领导责任人；实验室负责人是本实验室安全工作的直接责任人",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "sysaq_2021_0003",
+          "doc_id": "sysaq_2021",
+          "score": 0.6196,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行） > 第二章 实验室安全管理体系"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "sysaq_2021_0002",
+          "doc_id": "sysaq_2021",
+          "score": 0.5933,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行） > 第二章 实验室安全管理体系 > 第七条"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "sysaq_2021_0007",
+          "doc_id": "sysaq_2021",
+          "score": 0.5909,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行）"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "sysaq_2021_0004",
+          "doc_id": "sysaq_2021",
+          "score": 0.5576,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行）"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "sysaq_2021_0001",
+          "doc_id": "sysaq_2021",
+          "score": 0.5545,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行）"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "sysaq_2021_0006",
+          "doc_id": "sysaq_2021",
+          "score": 0.5526,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行） > 第三章 实验室安全管理要求"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "sysaq_2021_0005",
+          "doc_id": "sysaq_2021",
+          "score": 0.534,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行） > 第三章 实验室安全管理要求"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "sysaq_2021_0008",
+          "doc_id": "sysaq_2021",
+          "score": 0.5272,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行）"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "pyfa_jisuanji_2025_0013",
+          "doc_id": "pyfa_jisuanji_2025",
+          "score": 0.4393,
+          "heading_path": "2025级计算机科学与技术专业培养方案"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "pyfa_zidonghua_2025_0012",
+          "doc_id": "pyfa_zidonghua_2025",
+          "score": 0.4392,
+          "heading_path": "2025级自动化专业培养方案"
+        }
+      ],
+      "gold_rank": 5,
+      "judge": {
+        "answerable": null,
+        "stage": "budget_exhausted",
+        "reason": "LLM 预算不足（已用 15/16），未重新判定；该题在 eval_runs.csv 中 refused=true",
+        "chunks_checked": 0,
+        "yes_chunk_id": ""
+      },
+      "verdict": "judge_reject"
+    },
+    {
+      "qid": "q048",
+      "question": "进实验室做实验之前需要培训吗？",
+      "category": "fact",
+      "gold_chunk_ids": [
+        "sysaq_2021_0007"
+      ],
+      "gold_doc_ids": [
+        "sysaq_2021"
+      ],
+      "gold_answer": "建立、落实实验室安全准入制度，实验人员需通过相关部门或所在二级单位组织的实验室安全教育培训后方可进入实验室学习、工作",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "sysaq_2021_0007",
+          "doc_id": "sysaq_2021",
+          "score": 0.5655,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行）"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "sysaq_2021_0005",
+          "doc_id": "sysaq_2021",
+          "score": 0.5316,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行） > 第三章 实验室安全管理要求"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "sysaq_2021_0004",
+          "doc_id": "sysaq_2021",
+          "score": 0.5241,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行）"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "sysaq_2021_0006",
+          "doc_id": "sysaq_2021",
+          "score": 0.5241,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行） > 第三章 实验室安全管理要求"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "pyfa_zidonghua_2025_0012",
+          "doc_id": "pyfa_zidonghua_2025",
+          "score": 0.5136,
+          "heading_path": "2025级自动化专业培养方案"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "pyfa_jisuanji_2025_0012",
+          "doc_id": "pyfa_jisuanji_2025",
+          "score": 0.5121,
+          "heading_path": "2025级计算机科学与技术专业培养方案"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "pyfa_dianqi_2025_0012",
+          "doc_id": "pyfa_dianqi_2025",
+          "score": 0.5004,
+          "heading_path": "2025级电气工程及其自动化专业培养方案"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "sysaq_2021_0003",
+          "doc_id": "sysaq_2021",
+          "score": 0.4977,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行） > 第二章 实验室安全管理体系"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "sysaq_2021_0001",
+          "doc_id": "sysaq_2021",
+          "score": 0.496,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行）"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "pyfa_rengongzhineng_2025_0017",
+          "doc_id": "pyfa_rengongzhineng_2025",
+          "score": 0.4951,
+          "heading_path": "2025级人工智能专业培养方案"
+        }
+      ],
+      "gold_rank": 1,
+      "judge": {
+        "answerable": null,
+        "stage": "budget_exhausted",
+        "reason": "LLM 预算不足（已用 15/16），未重新判定；该题在 eval_runs.csv 中 refused=true",
+        "chunks_checked": 0,
+        "yes_chunk_id": ""
+      },
+      "verdict": "judge_reject"
+    },
+    {
+      "qid": "q051",
+      "question": "实验室出事故了怎么处理？",
+      "category": "procedure",
+      "gold_chunk_ids": [
+        "sysaq_2021_0008"
+      ],
+      "gold_doc_ids": [
+        "sysaq_2021"
+      ],
+      "gold_answer": "实验室发生安全事故，二级单位和实验室应立即启动应急预案，采取措施防止事故扩大和蔓延，保护好现场，及时报告学校领导小组办公室和保卫处；发生实验室安全事故后，二级单位和实验室应当配合相关职能部门进行事故调查，查明事故原因",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "sysaq_2021_0008",
+          "doc_id": "sysaq_2021",
+          "score": 0.6199,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行）"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "sysaq_2021_0006",
+          "doc_id": "sysaq_2021",
+          "score": 0.5733,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行） > 第三章 实验室安全管理要求"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "sysaq_2021_0004",
+          "doc_id": "sysaq_2021",
+          "score": 0.5654,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行）"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "sysaq_2021_0007",
+          "doc_id": "sysaq_2021",
+          "score": 0.5642,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行）"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "sysaq_2021_0005",
+          "doc_id": "sysaq_2021",
+          "score": 0.5379,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行） > 第三章 实验室安全管理要求"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "sysaq_2021_0001",
+          "doc_id": "sysaq_2021",
+          "score": 0.5363,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行）"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "sysaq_2021_0003",
+          "doc_id": "sysaq_2021",
+          "score": 0.5299,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行） > 第二章 实验室安全管理体系"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "sysaq_2021_0002",
+          "doc_id": "sysaq_2021",
+          "score": 0.5154,
+          "heading_path": "桂林电子科技大学实验室安全管理办法（试行） > 第二章 实验室安全管理体系 > 第七条"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "pyfa_zidonghua_2025_0012",
+          "doc_id": "pyfa_zidonghua_2025",
+          "score": 0.4845,
+          "heading_path": "2025级自动化专业培养方案"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "pyfa_jisuanji_2025_0012",
+          "doc_id": "pyfa_jisuanji_2025",
+          "score": 0.4616,
+          "heading_path": "2025级计算机科学与技术专业培养方案"
+        }
+      ],
+      "gold_rank": 1,
+      "judge": {
+        "answerable": null,
+        "stage": "budget_exhausted",
+        "reason": "LLM 预算不足（已用 15/16），未重新判定；该题在 eval_runs.csv 中 refused=true",
+        "chunks_checked": 0,
+        "yes_chunk_id": ""
+      },
+      "verdict": "judge_reject"
+    },
+    {
+      "qid": "q063",
+      "question": "申请补贴时系统说现在还不能申请，要等什么？",
+      "category": "fact",
+      "gold_chunk_ids": [
+        "qzcybt_2023_0002",
+        "qzcybt_2023_0005"
+      ],
+      "gold_doc_ids": [
+        "qzcybt_2023"
+      ],
+      "gold_answer": "出现提示“高校尚未导入基础数据，现不能申请，请同学耐心等待。”表示还不能申请，需要等待学校通知",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "qzcybt_2023_0005",
+          "doc_id": "qzcybt_2023",
+          "score": 0.5952,
+          "heading_path": "广西高校毕业生求职创业补贴系统操作手册（2023版）"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "qzcybt_2023_0002",
+          "doc_id": "qzcybt_2023",
+          "score": 0.5678,
+          "heading_path": "广西高校毕业生求职创业补贴系统操作手册（2023版）"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "qzcybt_2023_0007",
+          "doc_id": "qzcybt_2023",
+          "score": 0.5638,
+          "heading_path": "广西高校毕业生求职创业补贴系统操作手册（2023版）"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "qzcybt_2023_0001",
+          "doc_id": "qzcybt_2023",
+          "score": 0.5387,
+          "heading_path": "广西高校毕业生求职创业补贴系统操作手册（2023版）"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "qzcybt_2023_0004",
+          "doc_id": "qzcybt_2023",
+          "score": 0.5368,
+          "heading_path": "广西高校毕业生求职创业补贴系统操作手册（2023版）"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "qzcybt_2023_0006",
+          "doc_id": "qzcybt_2023",
+          "score": 0.5187,
+          "heading_path": "广西高校毕业生求职创业补贴系统操作手册（2023版）"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "qzcybt_2023_0003",
+          "doc_id": "qzcybt_2023",
+          "score": 0.5173,
+          "heading_path": "广西高校毕业生求职创业补贴系统操作手册（2023版）"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "xjgl_2025_0003",
+          "doc_id": "xjgl_2025",
+          "score": 0.4793,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "gjjxj_2026_0003",
+          "doc_id": "gjjxj_2026",
+          "score": 0.4724,
+          "heading_path": "关于开展2025-2026学年度国家奖学金评审推荐工作的通知"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "gjjxj_2026_0001",
+          "doc_id": "gjjxj_2026",
+          "score": 0.4616,
+          "heading_path": "关于开展2025-2026学年度国家奖学金评审推荐工作的通知"
+        }
+      ],
+      "gold_rank": 1,
+      "judge": {
+        "answerable": null,
+        "stage": "budget_exhausted",
+        "reason": "LLM 预算不足（已用 15/16），未重新判定；该题在 eval_runs.csv 中 refused=true",
+        "chunks_checked": 0,
+        "yes_chunk_id": ""
+      },
+      "verdict": "judge_reject"
+    },
+    {
+      "qid": "q076",
+      "question": "体测没达标，会影响评奖学金吗？",
+      "category": "cross",
+      "gold_chunk_ids": [
+        "tzjk_2026_0001",
+        "gjjxj_2026_0001"
+      ],
+      "gold_doc_ids": [
+        "tzjk_2026",
+        "gjjxj_2026"
+      ],
+      "gold_answer": "体测成绩未达标会影响在校期间的各种评优，甚至会影响是否能顺利毕业（tzjk_2026）；国家奖学金申请要求学习成绩优异，社会实践、创新能力、综合素质等方面特别突出（gjjxj_2026）",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "tzjk_2026_0002",
+          "doc_id": "tzjk_2026",
+          "score": 0.5339,
+          "heading_path": "关于开展2026年10月学生体质健康测试工作的通知"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "gjjxj_2026_0001",
+          "doc_id": "gjjxj_2026",
+          "score": 0.5339,
+          "heading_path": "关于开展2025-2026学年度国家奖学金评审推荐工作的通知"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tzjk_2026_0003",
+          "doc_id": "tzjk_2026",
+          "score": 0.5264,
+          "heading_path": "关于开展2026年10月学生体质健康测试工作的通知"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "gjjxj_2026_0002",
+          "doc_id": "gjjxj_2026",
+          "score": 0.5261,
+          "heading_path": "关于开展2025-2026学年度国家奖学金评审推荐工作的通知"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "gjjxj_2026_0003",
+          "doc_id": "gjjxj_2026",
+          "score": 0.5196,
+          "heading_path": "关于开展2025-2026学年度国家奖学金评审推荐工作的通知"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "tzjk_2026_0001",
+          "doc_id": "tzjk_2026",
+          "score": 0.5175,
+          "heading_path": "关于开展2026年10月学生体质健康测试工作的通知"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "tzjk_2026_0006",
+          "doc_id": "tzjk_2026",
+          "score": 0.5137,
+          "heading_path": "关于开展2026年10月学生体质健康测试工作的通知"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "tzjk_2026_0004",
+          "doc_id": "tzjk_2026",
+          "score": 0.5089,
+          "heading_path": "关于开展2026年10月学生体质健康测试工作的通知"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "tzjk_2026_0005",
+          "doc_id": "tzjk_2026",
+          "score": 0.4997,
+          "heading_path": "关于开展2026年10月学生体质健康测试工作的通知"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "kshgl_2020_0003",
+          "doc_id": "kshgl_2020",
+          "score": 0.4535,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第三章 课程考核与成绩记载"
+        }
+      ],
+      "gold_rank": 2,
+      "judge": {
+        "answerable": null,
+        "stage": "budget_exhausted",
+        "reason": "LLM 预算不足（已用 15/16），未重新判定；该题在 eval_runs.csv 中 refused=true",
+        "chunks_checked": 0,
+        "yes_chunk_id": ""
+      },
+      "verdict": "judge_reject"
+    },
+    {
+      "qid": "q078",
+      "question": "考试作弊被处分了，还能顺利毕业吗？",
+      "category": "cross",
+      "gold_chunk_ids": [
+        "kshgl_2020_0009",
+        "xjgl_2025_0010"
+      ],
+      "gold_doc_ids": [
+        "kshgl_2020",
+        "xjgl_2025"
+      ],
+      "gold_answer": "对考试作弊者给予留校察看处分，参加该次考试成绩无效且不得参加该次考试的补考（kshgl_2020）；受留校察看处分的学生，解除察看处分后方能毕业或结业（xjgl_2025）",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "kshgl_2020_0009",
+          "doc_id": "kshgl_2020",
+          "score": 0.6087,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第八章 考试违规行为的认定与处理"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "kshgl_2020_0010",
+          "doc_id": "kshgl_2020",
+          "score": 0.5916,
+          "heading_path": "桂林电子科技大学考试管理规定"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "kshgl_2020_0006",
+          "doc_id": "kshgl_2020",
+          "score": 0.5396,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第五章 学生考场规则"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "kshgl_2020_0004",
+          "doc_id": "kshgl_2020",
+          "score": 0.5201,
+          "heading_path": "桂林电子科技大学考试管理规定"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "kshgl_2020_0007",
+          "doc_id": "kshgl_2020",
+          "score": 0.5063,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第六章 监考人员职责"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "xjgl_2025_0006",
+          "doc_id": "xjgl_2025",
+          "score": 0.5033,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "xjgl_2025_0010",
+          "doc_id": "xjgl_2025",
+          "score": 0.5007,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "xjgl_2025_0002",
+          "doc_id": "xjgl_2025",
+          "score": 0.5005,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订） > 第二章 入学与注册 > 第三条 新生入学、注册与取得学籍"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "kshgl_2020_0005",
+          "doc_id": "kshgl_2020",
+          "score": 0.4995,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第四章 学生参加考核条件及缓考、补考细则"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "xjgl_2025_0011",
+          "doc_id": "xjgl_2025",
+          "score": 0.4925,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        }
+      ],
+      "gold_rank": 1,
+      "judge": {
+        "answerable": null,
+        "stage": "budget_exhausted",
+        "reason": "LLM 预算不足（已用 15/16），未重新判定；该题在 eval_runs.csv 中 refused=true",
+        "chunks_checked": 0,
+        "yes_chunk_id": ""
+      },
+      "verdict": "judge_reject"
+    },
+    {
+      "qid": "q080",
+      "question": "补考和重修哪个分更高？",
+      "category": "cross",
+      "gold_chunk_ids": [
+        "kshgl_2020_0005",
+        "xjgl_2025_0006"
+      ],
+      "gold_doc_ids": [
+        "kshgl_2020",
+        "xjgl_2025"
+      ],
+      "gold_answer": "补考直接计卷面成绩，最高记60分，低于60分按实际分数记（kshgl_2020）；重新选课学习，成绩按该门课程所取得成绩中的最高分数记载并以此计算学分绩（xjgl_2025）",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "pyfa_zidonghua_2025_0026",
+          "doc_id": "pyfa_zidonghua_2025",
+          "score": 0.4914,
+          "heading_path": "2025级自动化专业培养方案"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "xjgl_2025_0005",
+          "doc_id": "xjgl_2025",
+          "score": 0.4708,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "xjgl_2025_0004",
+          "doc_id": "xjgl_2025",
+          "score": 0.4618,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订） > 第四章 课程修读与免听、免修"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "kshgl_2020_0005",
+          "doc_id": "kshgl_2020",
+          "score": 0.4589,
+          "heading_path": "桂林电子科技大学考试管理规定 > 第四章 学生参加考核条件及缓考、补考细则"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "pyfa_zidonghua_2025_0027",
+          "doc_id": "pyfa_zidonghua_2025",
+          "score": 0.4498,
+          "heading_path": "2025级自动化专业培养方案"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "xjgl_2025_0006",
+          "doc_id": "xjgl_2025",
+          "score": 0.443,
+          "heading_path": "桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "kshgl_2020_0004",
+          "doc_id": "kshgl_2020",
+          "score": 0.4359,
+          "heading_path": "桂林电子科技大学考试管理规定"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "pyfa_zidonghua_2025_0025",
+          "doc_id": "pyfa_zidonghua_2025",
+          "score": 0.433,
+          "heading_path": "2025级自动化专业培养方案"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "pyfa_jisuanji_2025_0047",
+          "doc_id": "pyfa_jisuanji_2025",
+          "score": 0.4329,
+          "heading_path": "2025级计算机科学与技术专业培养方案"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "pyfa_jisuanji_2025_0026",
+          "doc_id": "pyfa_jisuanji_2025",
+          "score": 0.4321,
+          "heading_path": "2025级计算机科学与技术专业培养方案"
+        }
+      ],
+      "gold_rank": 4,
+      "judge": {
+        "answerable": null,
+        "stage": "budget_exhausted",
+        "reason": "LLM 预算不足（已用 15/16），未重新判定；该题在 eval_runs.csv 中 refused=true",
+        "chunks_checked": 0,
+        "yes_chunk_id": ""
+      },
+      "verdict": "judge_reject"
+    }
+  ]
+}

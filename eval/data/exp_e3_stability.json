@@ -1,0 +1,9 @@
+{
+  "n": 61,
+  "exact_same_no_rerank": 36,
+  "exact_same_rerank": 18,
+  "set_same_no_rerank": 54,
+  "set_same_rerank": 38,
+  "rank1_change_no_rerank": 1,
+  "rank1_change_rerank": 4
+}

@@ -6,6 +6,9 @@
 
 最大的挑战不是检索，而是**抑制大模型的幻觉**。实测直接向模型提问，会得到语言通顺但数字编造的答案（编造率 **75%**）。本项目的重点就是把它压到 **5%**，并让"答不出来"变成明确的拒答而不是硬答。
 
+> **只想快速看代码？** 见 [`CODE_MAP.md`](CODE_MAP.md) —— 全项目约 1.4 万行，但核心逻辑集中在
+> 5 个文件、约 1,360 行（`pipeline.py` / `retriever.py` / `chunker.py` / `prompts.py` / `sensitive.py`）。
+
 ---
 
 ## 核心结果
@@ -103,6 +106,16 @@
 
 > 附带的教训：引入新信号时，必须审计所有消费旧信号的判据。这类 bug 不报错、测试能过，症状和原因在代码里离得很远。
 
+### 4. 用产品设计补偿模型缺陷：让学生能自查"知识库里有什么"
+
+系统有 26%–35% 的过度拒答，且已确认无法通过调参、改提示词、扩窗口或引入重排消除 —— 这是本地 3B 模型的判定能力边界。
+
+既然模型侧修不了，就从使用侧对冲：**新增一个学生可见的「已收录取材清单」**（`GET /api/corpus/docs`）。用户在提问前能先看到库里收录了哪些文件、覆盖哪几类主题，被拒答时的心理预期就会从"这系统不行"变成"我要问的东西本来就没收录"。
+
+该接口只返回 `title / family_id / version / effective_date / chars`，**不暴露文件路径与文件存在性**；且只返回 `status=active` 的文档，与检索期的版本过滤保持一致，避免"看得到却问不到"。
+
+> 这算是本项目中唯一一处"不靠改模型、靠改产品行为"来改善体验的设计。
+
 ---
 
 ## 快速开始
@@ -150,9 +163,19 @@ cp data/sample/*.txt data/raw/
 
 ### 4. 构建知识库
 
+一条命令跑完五步：
+
+```bash
+python scripts/build_kb.py                # 全流程
+python scripts/build_kb.py --step chunk   # 只跑某一步（便于调试）
+python scripts/build_kb.py --from index   # 从某一步跑到结束
+```
+
+底层仍是五个可独立运行的步骤脚本（`build_kb.py` 只是包装，不改它们）：
+
 ```bash
 python scripts/01_parse.py        # 解析为纯文本
-python scripts/02_clean.py        # 清洗归一
+python scripts/02_clean.py        # 清洗归一（会先把原文备份到 data/text_backup/）
 python scripts/03_register.py     # 登记元数据
 python scripts/04_chunk.py        # 语义切分
 python scripts/05_build_index.py  # 向量化 + 建索引
@@ -180,6 +203,7 @@ python scripts/06_ask.py "考试不及格可以补考吗？"
 
 ```
 .
+├── CODE_MAP.md               # ★ 阅读导引：核心逻辑集中在哪 5 个文件
 ├── config.py                 # 全部可调参数集中于此（阈值/切分/模型/路径）
 ├── src/                      # 核心模块
 │   ├── loader.py             #   文档解析（PDF/Word/HTML/TXT）
@@ -190,15 +214,19 @@ python scripts/06_ask.py "考试不及格可以补考吗？"
 │   ├── generator.py          #   调用本地模型生成
 │   ├── prompts.py            #   全部 Prompt 集中管理
 │   ├── pipeline.py           #   问答主流程（含生成侧守卫）
+│   ├── reranker.py           #   重排（已实现但默认关闭，用于复现"不该启用"的结论）
 │   ├── sensitive.py          #   上传语料的敏感信息扫描
-│   └── corpus_admin.py       #   管理员语料导入（暂存/预览/入库/重建索引）
+│   ├── corpus_admin.py       #   管理员语料导入（暂存/预览/入库/重建索引）
+│   ├── eval_metrics.py       #   评估指标（Recall@K / MRR / 混淆矩阵）
+│   └── utils.py              #   日志、JSONL 读写等公共函数
 ├── backend/                  # FastAPI 服务
 │   ├── auth.py / db.py       #   令牌认证（PBKDF2）与 SQLite
-│   └── routers/              #   认证 / 问答(SSE) / 会话 / 管理端
+│   └── routers/              #   认证 / 问答(SSE) / 会话 / 管理端 / 只读语料目录
 ├── frontend/src/             # Vue 3 前端（登录 / 问答 / 管理三端）
 ├── scripts/                  # 数据流水线与评估脚本
-├── tests/                    # 单元测试（无需 GPU / 模型即可运行）
-├── eval/                     # 评测框架与实验记录 ★
+│   └── build_kb.py           #   ★ 一条命令跑完建库五步
+├── tests/                    # 48 个单元测试（无需 GPU / 模型即可运行）
+├── eval/                     # 评测框架、85 题评估集、实验记录与原始数据 ★
 └── docs/                     # 环境配置、设计决策、踩坑记录
 ```
 
@@ -240,6 +268,20 @@ python -m pytest tests -q
 | [`docs/环境配置.md`](docs/环境配置.md) | 环境要求与 **10 个实际踩到的问题** |
 | [`docs/设计决策.md`](docs/设计决策.md) | 六个关键取舍及其理由 |
 | [`docs/失败案例集.md`](docs/失败案例集.md) | **24 个真实踩坑记录**（环境、代码、模型行为、评估设计） |
+
+**实验原始数据**（`eval/data/`，可直接核对的中间结果）：
+
+| 文件 | 内容 |
+|---|---|
+| `questions.csv` | 85 题评估集与 gold 标注（dev 61 / test 24） |
+| `exp_e3_rerank_rank.json` | 重排实验中每题的答案块排名对比 |
+| `exp_e3_stability.json` | 重复运行的一致性记录（验证系统确定性） |
+| `exp_punct_sensitivity.json` | 标点敏感性实验（61 题 × 2 问法）的逐题分数 |
+| `rca_over_refusal.json` | 过度拒答的逐题归因（答案块落在第几位） |
+| `_blind_scoring60.json` | 60 条人工盲评的逐条评分与理由 |
+| `_judge_ab_result.json` | 判定提示词 A/B 对照的否定结果（两种提示词逐题判定完全相同） |
+
+这些脚本可重新生成上述数据，见 [`scripts/`](scripts/) 与 `eval/*.md` 中的说明。
 
 ---
 
@@ -311,6 +353,10 @@ python -m pytest tests -q
 ## 说明
 
 本项目为本科毕业设计。语料为校内公开的规章制度文档，**原始语料与本地模型未包含在本仓库中**（体积与隐私原因），仓库内只包含源代码、评测框架与实验记录。
+
+`data/sample/` 下提供三份**合成的示例文档**与元数据模板，用于让 clone 之后能跑通全流程，不代表真实语料内容。
+
+未收录的内容：原始语料（14 份 PDF/Word）、模型权重、`eval/data/eval_runs.csv`（多轮配置混在一起的工作日志，不适合作为成果数据）。
 
 ## License
 

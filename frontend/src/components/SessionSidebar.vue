@@ -1,7 +1,7 @@
 <template>
-  <div class="sidebar">
+  <div class="sidebar" :class="{ open }">
     <div class="sidebar-head">
-      <el-button class="new-btn" type="primary" @click="$emit('create')">＋ 新建会话</el-button>
+      <el-button class="new-btn" type="primary" @click="onCreate">＋ 新建会话</el-button>
     </div>
     <div class="sidebar-list">
       <div
@@ -9,7 +9,7 @@
         :key="s.session_id"
         class="session-item"
         :class="{ active: s.session_id === currentSessionId }"
-        @click="$emit('select', s.session_id)"
+        @click="onSelect(s.session_id)"
       >
         <div class="session-info">
           <div class="session-name">{{ s.title || '未命名会话' }}</div>
@@ -28,9 +28,22 @@ import { ElMessageBox } from 'element-plus'
 defineProps({
   sessions: { type: Array, default: () => [] },
   currentSessionId: { type: String, default: null },
+  // 窄屏抽屉是否打开（桌面端忽略）
+  open: { type: Boolean, default: false },
 })
 
-const emit = defineEmits(['select', 'create', 'delete'])
+const emit = defineEmits(['select', 'create', 'delete', 'close'])
+
+// 选中会话后，窄屏要自动收起抽屉
+function onSelect(id) {
+  emit('select', id)
+  emit('close')
+}
+
+function onCreate() {
+  emit('create')
+  emit('close')
+}
 
 function shortTime(iso) {
   if (!iso) return ''
@@ -139,5 +152,27 @@ async function confirmDelete(s) {
   color: var(--c-text-3);
   font-size: 13px;
   padding: 20px 0;
+}
+
+/* ── 窄屏：侧栏改为抽屉（桌面端不受影响）──────────────── */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    width: min(280px, 82vw);
+    height: 100%;
+    transform: translateX(-100%);
+    transition: transform 0.22s ease;
+    /* ★ 阴影只放在打开态：关闭时元素虽移出屏幕，阴影仍会从屏幕左侧
+       漏出一条灰边（x 偏移 2px + 16px 模糊），在窄屏上很显眼。 */
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 2px 0 16px rgba(0, 0, 0, 0.12);
+  }
 }
 </style>

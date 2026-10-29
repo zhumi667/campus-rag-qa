@@ -56,3 +56,9 @@ export async function getMessages(sessionId) {
 export async function deleteSession(sessionId) {
   await http.delete(`/api/sessions/${sessionId}`)
 }
+
+/** 已收录取材清单（学生可见，只返回标题/版本/生效日期/字数） */
+export async function fetchCorpusDocs() {
+  const { data } = await http.get('/api/corpus/docs')
+  return data
+}

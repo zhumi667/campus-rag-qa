@@ -1,0 +1,410 @@
+{
+  "n": 56,
+  "avg_recall_rank": 2.1964,
+  "avg_rerank_rank": 1.8571,
+  "improved": 20,
+  "worsened": 10,
+  "top3_before": 45,
+  "top3_after": 49,
+  "details": [
+    {
+      "qid": "q001",
+      "category": "fact",
+      "recall_rank": 2,
+      "rerank_rank": 2,
+      "n_gold": 1
+    },
+    {
+      "qid": "q003",
+      "category": "procedure",
+      "recall_rank": 6,
+      "rerank_rank": 12,
+      "n_gold": 1
+    },
+    {
+      "qid": "q005",
+      "category": "fact",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q007",
+      "category": "fact",
+      "recall_rank": 4,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q011",
+      "category": "procedure",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q014",
+      "category": "procedure",
+      "recall_rank": null,
+      "rerank_rank": null,
+      "n_gold": 1
+    },
+    {
+      "qid": "q016",
+      "category": "fact",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q017",
+      "category": "procedure",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q018",
+      "category": "fact",
+      "recall_rank": 4,
+      "rerank_rank": 2,
+      "n_gold": 1
+    },
+    {
+      "qid": "q019",
+      "category": "procedure",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q020",
+      "category": "fact",
+      "recall_rank": 4,
+      "rerank_rank": 5,
+      "n_gold": 1
+    },
+    {
+      "qid": "q021",
+      "category": "fact",
+      "recall_rank": 8,
+      "rerank_rank": 6,
+      "n_gold": 1
+    },
+    {
+      "qid": "q022",
+      "category": "procedure",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q023",
+      "category": "fact",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q026",
+      "category": "fact",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q028",
+      "category": "procedure",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q029",
+      "category": "procedure",
+      "recall_rank": 3,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q030",
+      "category": "fact",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q031",
+      "category": "fact",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q032",
+      "category": "procedure",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q033",
+      "category": "fact",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q035",
+      "category": "fact",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q036",
+      "category": "procedure",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q038",
+      "category": "fact",
+      "recall_rank": 2,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q039",
+      "category": "fact",
+      "recall_rank": 4,
+      "rerank_rank": 2,
+      "n_gold": 1
+    },
+    {
+      "qid": "q040",
+      "category": "fact",
+      "recall_rank": 5,
+      "rerank_rank": 3,
+      "n_gold": 1
+    },
+    {
+      "qid": "q041",
+      "category": "fact",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q042",
+      "category": "fact",
+      "recall_rank": 2,
+      "rerank_rank": 2,
+      "n_gold": 1
+    },
+    {
+      "qid": "q044",
+      "category": "procedure",
+      "recall_rank": 5,
+      "rerank_rank": 6,
+      "n_gold": 1
+    },
+    {
+      "qid": "q045",
+      "category": "procedure",
+      "recall_rank": 5,
+      "rerank_rank": 5,
+      "n_gold": 1
+    },
+    {
+      "qid": "q047",
+      "category": "fact",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q048",
+      "category": "fact",
+      "recall_rank": 1,
+      "rerank_rank": 2,
+      "n_gold": 1
+    },
+    {
+      "qid": "q049",
+      "category": "procedure",
+      "recall_rank": 2,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q050",
+      "category": "procedure",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q051",
+      "category": "procedure",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q052",
+      "category": "fact",
+      "recall_rank": 2,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q053",
+      "category": "fact",
+      "recall_rank": 3,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q054",
+      "category": "procedure",
+      "recall_rank": 2,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q055",
+      "category": "fact",
+      "recall_rank": 3,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q056",
+      "category": "fact",
+      "recall_rank": 3,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q057",
+      "category": "procedure",
+      "recall_rank": 1,
+      "rerank_rank": 2,
+      "n_gold": 1
+    },
+    {
+      "qid": "q059",
+      "category": "fact",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q060",
+      "category": "fact",
+      "recall_rank": 5,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q063",
+      "category": "fact",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 2
+    },
+    {
+      "qid": "q064",
+      "category": "fact",
+      "recall_rank": 2,
+      "rerank_rank": 1,
+      "n_gold": 2
+    },
+    {
+      "qid": "q066",
+      "category": "fact",
+      "recall_rank": 1,
+      "rerank_rank": 2,
+      "n_gold": 1
+    },
+    {
+      "qid": "q067",
+      "category": "procedure",
+      "recall_rank": 3,
+      "rerank_rank": 4,
+      "n_gold": 1
+    },
+    {
+      "qid": "q068",
+      "category": "fact",
+      "recall_rank": 2,
+      "rerank_rank": 3,
+      "n_gold": 1
+    },
+    {
+      "qid": "q069",
+      "category": "fact",
+      "recall_rank": 2,
+      "rerank_rank": 4,
+      "n_gold": 1
+    },
+    {
+      "qid": "q072",
+      "category": "fact",
+      "recall_rank": 2,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q073",
+      "category": "procedure",
+      "recall_rank": 2,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q074",
+      "category": "procedure",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 1
+    },
+    {
+      "qid": "q075",
+      "category": "fact",
+      "recall_rank": 1,
+      "rerank_rank": 2,
+      "n_gold": 1
+    },
+    {
+      "qid": "q076",
+      "category": "cross",
+      "recall_rank": 2,
+      "rerank_rank": 1,
+      "n_gold": 2
+    },
+    {
+      "qid": "q078",
+      "category": "cross",
+      "recall_rank": 1,
+      "rerank_rank": 1,
+      "n_gold": 2
+    },
+    {
+      "qid": "q079",
+      "category": "cross",
+      "recall_rank": 3,
+      "rerank_rank": 1,
+      "n_gold": 2
+    },
+    {
+      "qid": "q080",
+      "category": "cross",
+      "recall_rank": 4,
+      "rerank_rank": 2,
+      "n_gold": 2
+    }
+  ]
+}

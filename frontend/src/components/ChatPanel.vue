@@ -6,10 +6,12 @@
         <div v-if="!messages.length" class="empty-hint">
           <div class="empty-title">校园领域智能问答系统</div>
           <div class="empty-sub">
-            基于校园公开文档的检索增强问答，回答均附原文出处。
+            已收录校内资料，覆盖培养方案、学籍管理、考试规定、评奖办法等；
+            回答均附原文出处，未收录的问题会明确提示，不会编造。
           </div>
           <div class="empty-try">
-            试试问：<code @click="fillExample">考试不及格可以补考吗</code>
+            <span class="empty-try-label">试试问：</span>
+            <code v-for="q in examples" :key="q" @click="fillExample(q)">{{ q }}</code>
           </div>
         </div>
         <MessageItem v-for="m in messages" :key="m.id" :message="m" />
@@ -72,9 +74,18 @@ function send() {
 }
 
 /** 点击空状态示例问题：填入输入框（不自动发送，让用户可先修改） */
-function fillExample() {
+// 空状态示例问题：按"考试 / 学籍 / 奖助 / 流程"各取一例，
+// 让用户一眼看出这个系统能回答哪类问题
+const examples = [
+  '考试不及格可以补考吗',
+  '毕业要修满多少学分',
+  '国家奖学金一年多少钱',
+  '怎么申请转专业',
+]
+
+function fillExample(q) {
   if (props.streaming) return
-  input.value = '考试不及格可以补考吗'
+  input.value = q
 }
 
 watch(() => props.messages.length, async () => {
@@ -124,9 +135,14 @@ watch(() => props.messages.length, async () => {
   margin-top: var(--sp-3);
   font-size: 13px;
 }
+.empty-try-label {
+  margin-right: 2px;
+}
 .empty-try code {
   display: inline-block;
   padding: 3px 10px;
+  margin: 0 6px 6px 0;
+  vertical-align: middle;
   border-radius: var(--r-md);
   border: 1px solid var(--c-primary-border);
   background: var(--c-primary-light);
