@@ -1,5 +1,8 @@
 """敏感信息扫描模块的单元测试（src/sensitive.py）
 
+★ 本文件中的手机号、身份证号均为【虚构测试数据】，不要替换为真实号码。
+
+
 这些测试【不依赖模型、不依赖索引】，可以直接 `pytest` 运行。
 """
 from src import sensitive
@@ -9,7 +12,7 @@ class TestBlockRules:
     """高风险规则：命中即应阻止入库"""
 
     def test_id_card_18(self):
-        res = sensitive.scan_text("身份证号 450322199001011234 请核对")
+        res = sensitive.scan_text("身份证号 110101199001011234 请核对")
         assert any(h.rule == "身份证号" and h.level == "block" for h in res.hits)
 
     def test_id_card_15(self):
@@ -17,7 +20,7 @@ class TestBlockRules:
         assert any(h.level == "block" for h in res.hits)
 
     def test_mobile(self):
-        res = sensitive.scan_text("联系电话 15977033582")
+        res = sensitive.scan_text("联系电话 13800138000")
         assert any(h.rule == "手机号" and h.level == "block" for h in res.hits)
 
     def test_plain_text_has_no_hits(self):
@@ -44,7 +47,7 @@ class TestScanResult:
         assert res.text_len == len(text)
 
     def test_hit_carries_context_and_position(self):
-        text = "前文" * 10 + "手机 15977033582" + "后文" * 10
+        text = "前文" * 10 + "手机 13800138000" + "后文" * 10
         res = sensitive.scan_text(text)
         assert len(res.hits) == 1
         hit = res.hits[0]
@@ -54,7 +57,7 @@ class TestScanResult:
         assert 0 <= hit.position < len(text)
 
     def test_format_report_returns_text(self):
-        res = sensitive.scan_text("手机 15977033582")
+        res = sensitive.scan_text("手机 13800138000")
         report = sensitive.format_report(res)
         assert isinstance(report, str)
         assert report.strip() != ""
