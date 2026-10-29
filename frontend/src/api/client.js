@@ -21,7 +21,13 @@ http.interceptors.response.use(
   (resp) => resp,
   (error) => {
     const status = error.response?.status
-    if (status === 401) {
+    const url = error.config?.url || ''
+    // ★ 登录接口自身的 401 表示"用户名或密码错误"，属于预期内的业务错误，
+    //   交给调用方展示提示即可。若走下面的清 token + 跳转逻辑，
+    //   会额外触发一次页面跳转，把错误提示冲掉。
+    const isLoginRequest = url.includes('/api/auth/login')
+
+    if (status === 401 && !isLoginRequest) {
       clearToken()
       if (!window.location.pathname.startsWith('/login')) {
         window.location.href = '/login'

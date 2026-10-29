@@ -11,6 +11,7 @@
         v-model="username"
         class="field"
         placeholder="用户名"
+        autocomplete="username"
         @keydown.enter="submit"
       />
       <el-input
@@ -18,6 +19,7 @@
         class="field"
         type="password"
         placeholder="密码"
+        autocomplete="current-password"
         show-password
         @keydown.enter="submit"
       />
@@ -53,15 +55,33 @@ const loading = ref(false)
 const errorMsg = ref('')
 
 async function submit() {
-  if (!username.value || !password.value) return
-  loading.value = true
+  if (loading.value) return
   errorMsg.value = ''
+
+  // ★ 原实现是 `if (!username || !password) return` —— 什么都不做也不提示。
+  //   浏览器自动填充（或首次进入时字段还没同步到 v-model）会让第一次点击
+  //   静默失败，用户以为"点了没反应"，再点一次才进去。这里改为明确提示。
+  if (!username.value || !password.value) {
+    errorMsg.value = '请输入用户名和密码'
+    return
+  }
+
+  loading.value = true
   try {
-    await login(username.value, password.value)
-    const redirect = route.query.redirect || '/'
-    router.push(redirect)
+    // 用户名去除首尾空格：从浏览器自动填充或粘贴时经常带进不可见空格，
+    // 后端按原样比对会导致"密码明明对却返回 401"。
+    // 密码不做 trim —— 空格可能是密码的一部分。
+    await login(username.value.trim(), password.value)
+
+    // 只接受站内相对路径，避免 redirect 参数被用来跳出站点
+    const q = route.query.redirect
+    const redirect = typeof q === 'string' && q.startsWith('/') ? q : '/'
+
+    // ★ await：确保跳转完成后才结束 loading 状态，
+    //   否则按钮会先恢复可点、页面还停在登录页，用户容易重复点击。
+    await router.push(redirect)
   } catch (e) {
-    errorMsg.value = e.response?.data?.detail || '登录失败'
+    errorMsg.value = e.response?.data?.detail || '登录失败，请重试'
   } finally {
     loading.value = false
   }
